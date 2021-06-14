@@ -54,7 +54,7 @@ function getStringLength(str) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return "Hello, " + firstName + " " + lastName + "!";
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -68,7 +68,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(str) {
-  return str.split("Hello, ").join("").split("!").join("");
+  return str.split('Hello, ').join('').split('!').join('');
 }
 
 
@@ -129,7 +129,7 @@ function repeatString(str, num) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, val) {
-  return str.replace(val, "");
+  return str.replace(val, '');
 }
 
 /**
@@ -144,7 +144,7 @@ function removeFirstOccurrences(str, val) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.split("<").join("").split(">").join("");
+  return str.split('<').join('').split('>').join('');
 }
 
 
@@ -178,7 +178,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(";");
+  return str.split(';');
 }
 
 /**
