@@ -225,8 +225,28 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  return str.split('').map((el) => {
+    const char = el.charCodeAt();
+    let element;
+    if (char >= 32 || char <= 64) {
+      element = String.fromCharCode(char);
+    }
+    if (char >= 65 && char <= 90) {
+      if (char <= 77) {
+        element = String.fromCharCode(char + 13);
+      } else {
+        element = String.fromCharCode(char - 13);
+      }
+    } if (char >= 97 && char <= 122) {
+      if (char <= 109) {
+        element = String.fromCharCode(char + 13);
+      } else {
+        element = String.fromCharCode(char - 13);
+      }
+    }
+    return element;
+  }).join('');
 }
 
 /**
@@ -242,8 +262,8 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(val) {
+  return typeof val === 'string' || val instanceof String;
 }
 
 
