@@ -153,7 +153,7 @@ function getLastDigit(val) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
+function parseNumberFromString(/* val */) {
   throw new Error('Not implemented');
 }
 
