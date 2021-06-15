@@ -19,8 +19,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(a, b) {
+  return a * b;
 }
 
 
@@ -35,8 +35,8 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCicleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCicleCircumference(r) {
+  return r * 2 * Math.PI;
 }
 
 /**
@@ -51,8 +51,14 @@ function getCicleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(a, b) {
+  const res = (a + b) / 2;
+  if (res >= Number.MAX_VALUE) {
+    return Number.MAX_VALUE;
+  } if (res <= Number.MIN_VALUE) {
+    return 0;
+  }
+  return res;
 }
 
 /**
@@ -70,8 +76,10 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const AC = x2 - x1;
+  const BC = y2 - y1;
+  return Math.sqrt(AC ** 2 + BC ** 2);
 }
 
 /**
@@ -86,8 +94,8 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  return (-b) / a;
 }
 
 
@@ -109,8 +117,11 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const scal = x1 * x2 + y1 * y2;
+  const mod1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const mod2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+  return Math.acos(scal / (mod1 * mod2));
 }
 
 /**
@@ -125,8 +136,9 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(val) {
+  const res = val.toString();
+  return res[res.length - 1];
 }
 
 
