@@ -293,7 +293,7 @@ describe('03-arrays-tasks', () => {
       }, {
         arr: [[]],
         expected: '',
-      },
+      }
     ].forEach((data) => {
       const actual = tasks.toCsvText(data.arr);
       assert.equal(
@@ -432,6 +432,9 @@ describe('03-arrays-tasks', () => {
         arr: [],
         expected: 0,
       }, {
+        arr: [1, 2],
+        expected: 2,
+      }, {
         arr: [-1, 0, 1],
         expected: 1,
       }, {
@@ -441,7 +444,7 @@ describe('03-arrays-tasks', () => {
         arr: [null, 1, 'elephant'],
         expected: 1,
       }, {
-        arr: [1, '2'],
+        arr: [1, '3', 'string'],
         expected: 1,
       },
     ].forEach((data) => {
