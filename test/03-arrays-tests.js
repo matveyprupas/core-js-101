@@ -444,7 +444,7 @@ describe('03-arrays-tasks', () => {
         arr: [null, 1, 'elephant'],
         expected: 1,
       }, {
-        arr: [1, '3', 'string'],
+        arr: [1, '2'],
         expected: 1,
       },
     ].forEach((data) => {
