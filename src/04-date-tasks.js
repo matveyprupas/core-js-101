@@ -19,8 +19,8 @@
  *    'Tue, 26 Jan 2016 13:48:02 GMT' => Date()
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
-function parseDataFromRfc2822(/* value */) {
-  throw new Error('Not implemented');
+function parseDataFromRfc2822(val) {
+  return new Date(val);
 }
 
 /**
@@ -34,8 +34,8 @@ function parseDataFromRfc2822(/* value */) {
  *    '2016-01-19T16:07:37+00:00'    => Date()
  *    '2016-01-19T08:07:37Z' => Date()
  */
-function parseDataFromIso8601(/* value */) {
-  throw new Error('Not implemented');
+function parseDataFromIso8601(val) {
+  return new Date(val);
 }
 
 
@@ -53,8 +53,12 @@ function parseDataFromIso8601(/* value */) {
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+function isLeapYear(date) {
+  const y = date.getFullYear();
+  if (y % 400 === 0) return true;
+  if (y % 100 === 0) return false;
+  if (y % 4 === 0) return true;
+  return false;
 }
 
 
@@ -73,8 +77,14 @@ function isLeapYear(/* date */) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,10,0,0,250)     => "00:00:00.250"
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
-function timeSpanToString(/* startDate, endDate */) {
-  throw new Error('Not implemented');
+function timeSpanToString(startDate, endDate) {
+  function pad2(d) {
+    return (d < 10) ? `0${d.toString()}` : d.toString();
+  }
+  function pad3(d) {
+    return (d < 100) ? `00${d.toString()}` : d.toString();
+  }
+  return `${pad2(endDate.getHours() - startDate.getHours())}:${pad2(endDate.getMinutes() - startDate.getMinutes())}:${pad2(endDate.getSeconds() - startDate.getSeconds())}.${pad3(endDate.getMilliseconds() - startDate.getMilliseconds())}`;
 }
 
 
