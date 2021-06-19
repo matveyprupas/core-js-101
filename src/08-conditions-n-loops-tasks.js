@@ -125,6 +125,16 @@ function isTriangle(a, b, c) {
  */
 function doRectanglesOverlap(/* rect1, rect2 */) {
   throw new Error('Not implemented');
+  // const rect1X2 = rect1.left + rect1.width;
+  // const rect1Y2 = rect1.top + rect1.height;
+  // const rect2X2 = rect2.left + rect2.width;
+  // const rect2Y2 = rect2.top + rect2.height;
+  // if (rect1.left <= rect2.left && rect1X2 <= rect2X2) return true;
+  // if (rect1.left >= rect2.left && rect1X2 >= rect2X2) return true;
+  // if (rect1.left <= rect2.left && rect1X2 >= rect2X2) return true;
+  // if (rect1X2 >= rect2.left && rect2X2 <= rect1.left) return false;
+  // if (rect1Y2 >= rect2.top && rect2Y2 <= rect1.top) return false;
+  // return true;
 }
 
 
